@@ -1,10 +1,22 @@
 ---
-layout: archive
+layout: page
+pagination:
+  enabled: true
 ---
-
-{{ content }}
-
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
+<div class="blog-area bg-color1 p-t-130 p-b-130">
+<div class="container">
+  <div class="blog-wrapper">
+    <div class="row"> 
+	   {% for post in paginator.posts %}	   
+            <div class="col-md-6">
+            {% include post_content.html %}
+            </div>
+        {% endfor %}
+        </div>
+		        <div class="row justify-content-center">
+        {% include pagination.html %}
+        </div>
+		
+      </div>
+    </div>
 </div>

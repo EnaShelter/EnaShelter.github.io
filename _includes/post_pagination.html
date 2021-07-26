@@ -1,14 +1,10 @@
-{% if page.previous or page.next %}
-  <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+<nav class="page-pagination d-flex themeix blog-spacing">
+    <ul class="pagination justify-content-between">
+    {% if page.previous.url %}
+    <li class=" page-item themeix"><a class="page-link prev" href="{{ page.previous.url }}">Prev</a></li>
     {% endif %}
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+    {% if page.next.url %}
+    <li class=" page-item themeix"><a class="page-link next" href="{{ page.next.url }}">Next</a></li>
     {% endif %}
-  </nav>
-{% endif %}
+    </ul>
+</nav>
