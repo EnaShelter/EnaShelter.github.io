@@ -610,8 +610,7 @@ html {
 
       > :nth-child(1) {
         @include relative-font-size(3.9);
-        letter-spacing: 2px;
-        text-align: end;
+        letter-spacing: -1px;
         margin-bottom: 0.1em;
         font-weight: normal;
         transition: 0.2s all;
@@ -623,7 +622,6 @@ html {
 
       > :nth-child(2) {
         font-weight: lighter;
-        text-align: end;
         margin-bottom: 0.8em;
         transition: 0.2s all;
 
